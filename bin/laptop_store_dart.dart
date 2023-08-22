@@ -63,9 +63,10 @@ void main() {
   print('Enter your Badget:');
   int price=int.parse(stdin.readLineSync()!);
   print('The laptops that you can buy');
-  laptops.forEach((element) {
-    if(price>=element['price']){
-      print('${element['name']}'+', Hard desk:'+'${element['hard desk']}'+',RAM:'+'${element['ram']}'+',Price:'+'${element['price']}');
-    }
+  List<Map> canbuy = laptops.where((element) => element['price'] <= price).toList();
+  canbuy.forEach((element) {
+      print('${element['name']}'+',Price:'+'${element['price']}');
+    
   });
+
 }
