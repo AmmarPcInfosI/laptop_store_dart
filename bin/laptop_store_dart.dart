@@ -65,7 +65,7 @@ void main() {
   print('The laptops that you can buy');
   List<Map> canbuy = laptops.where((element) => element['price'] <= price).toList();
   canbuy.forEach((element) {
-      print('${element['name']}'+',Price:'+'${element['price']}');
+      print('${element['name']},Price:${element['price']}');
     
   });
 
